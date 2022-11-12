@@ -2,13 +2,10 @@ import React, { createContext, useContext , useState } from 'react';
 import { RecipeContext } from '../components/context';
 import axios from "axios";
 
-
-
-
 export default function AddNew() {
 
-    const { dispatchRecipes, state } = useContext(RecipeContext)
-    const [modalOpen, setModalOpen] = useState(false)
+    const { dispatchRecipes, globalRecipes } = useContext(RecipeContext)
+  
 
     //local state:
     const [newRecipe, setNewRecipe] = useState({
@@ -21,15 +18,10 @@ export default function AddNew() {
 
     })
 
-    
-
-    
 
     const handleSave = async () => {
-        const response = await axios.post('/recipe/add', {
-            newRecipe
-            
-        })
+        const response = await axios.post('/recipes/add', 
+        newRecipe)
 
         if (response.data.success) {
 
@@ -41,10 +33,8 @@ export default function AddNew() {
         }
         console.log("🚀 ~ response", response)
 
-        setModalOpen(false)
+        
     }
-
-    
 
     //console.log('globalRecipies is ', globalRecipes)
   return (

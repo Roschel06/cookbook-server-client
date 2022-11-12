@@ -31,11 +31,13 @@ console.log(RecipeContext)
 const [globalRecipes, dispatchRecipes] = useReducer(reducer,{
  
     recipes:{
-        title:'',
-        ingredients:'',
-        method:'',
-        category:'',
-        cookingTime:''
+      title: '',
+      ingredients: '',
+      method: '',
+      category: '',
+      cookingTime: '',
+      rating: ''
+
    },
  
 

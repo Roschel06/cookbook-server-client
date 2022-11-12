@@ -15,10 +15,10 @@ function HomePage() {
   return (
       <div>
         <HomeCategories globalRecipes={globalRecipes} />
-        <CommunityRecipes globalRecipes={globalRecipes}/>
+{/*         <CommunityRecipes globalRecipes={globalRecipes}/>
         <p>-------------------------------------------------</p>
         <p>hello from home page</p>
-          {globalRecipes?.post?.map((item, idx) => <Card key={idx} globalRecipes={item}/> )}
+          {globalRecipes?.post?.map((item, idx) => <Card key={idx} globalRecipes={item}/> )} */}
       </div>
   )
    

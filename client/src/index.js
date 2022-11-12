@@ -47,7 +47,7 @@ root.render(
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/addNew' element={<AddNew/>}/>
-          <Route path="/category/:name" element={<CategoryPage/>} />
+          <Route path="/category/:title" element={<CategoryPage/>} />
         </Routes>
       <Footer/>
     </ThemeProvider>
