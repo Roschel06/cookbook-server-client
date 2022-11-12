@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState, useEffect, useCallback} from 'react'
-import { client } from '../client'
 import { Route, Routes, Link } from "react-router-dom";
 import CategoryPage from '../pages/CategoryPage';
 
@@ -11,7 +10,7 @@ export default function HomeCategories() {
 
    
     const getData = useCallback(async() => {
-        try {
+/*         try {
             const response = await client.getEntries({ content_type: 'category'})
             const responseData = response.items
             console.log(responseData)
@@ -19,7 +18,7 @@ export default function HomeCategories() {
             setCategories([...responseData])
         } catch (error) {
             console.log(error)
-        }
+        } */
     }, [])
     
     useEffect(()=>{

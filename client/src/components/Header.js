@@ -1,7 +1,6 @@
 import { useContext, useEffect , useReducer} from 'react';
 import {Link} from 'react-router-dom'
 import { RecipeContext } from './context'
-import { client } from '../client'
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -63,7 +62,7 @@ export default function SearchAppBar() {
 const {dispatchRecipes} = useContext(RecipeContext)
 
 useEffect(()=>{
-  const getData = async() => {
+/*   const getData = async() => {
     try {
       const response = await client.getEntries({ content_type: 'breakfastRecipe'})
       const responseData = response.items
@@ -76,7 +75,7 @@ useEffect(()=>{
   }
 
   }
-  getData()
+  getData() */
 },[])
 
 
