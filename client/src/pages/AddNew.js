@@ -4,6 +4,7 @@ import axios from "axios";
 
 
 
+
 export default function AddNew() {
 
     const { dispatchRecipes, state } = useContext(RecipeContext)
@@ -33,6 +34,7 @@ export default function AddNew() {
         if (response.data.success) {
 
             dispatchRecipes({
+
                 type: 'addRecipe',
                 payload: response.data.recipe
             })
