@@ -1,49 +1,44 @@
-import React, { useContext , useState } from 'react'
+import React, { createContext, useContext , useState } from 'react'
 import { RecipeContext } from '../components/context'
+
+
 
 export default function AddNew() {
 
-    const { dispatchRecipes } = useContext(RecipeContext)
+    const { dispatchRecipes, state } = useContext(RecipeContext)
+    const [modalOpen, setModalOpen] = useState(false)
 
     //local state:
     const [newRecipe, setNewRecipe] = useState({
         title: '',
-        ingredients: [],
+        ingredients: '',
         method: '',
         category: '',
-        cookingTime: ''
+        cookingTime: '',
+        rating: ''
 
     })
-    //update the context:
+
     
 
-    const handleSave = async => {
-        console.log('hello from save new product', newRecipe)
-        
-        // try {
+    
+
+    const handleSave = async () => {
+        const response = await axios.post('/recipe/add', {
+            newRecipe
             
-        //     const response = await fetch('need a url from contentful', {
-        //         method: 'POST',
-        //         body: JSON.stringify(newProductToSend),
-        //         headers: {
-        //             'Content-type': 'application/json; charset=UTF-8'
-        //         }
-        //     }) // syntax fetch('url', {configutation})
+        })
 
-        //     // axios.post('url', data)
+        if (response.data.success) {
 
-        //     // const data = await response.json();
-        //     // console.log("🚀 ~ data", data)
+            dispatch({
+                type: 'addRecipe',
+                payload: response.data.recipe
+            })
+        }
+        console.log("🚀 ~ response", response)
 
-        //     dispatchState({
-        //         type: 'add',
-        //         payload: newRecipe
-        //     }) // updates the context
-
-        // } catch (error) {
-        //     console.log('Error sending data', error.message)
-        // }
-
+        setModalOpen(false)
     }
 
     
