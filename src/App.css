@@ -1,0 +1,43 @@
+/* Star Rating*/
+.star-rating{
+  color: rgb(231, 231, 231);
+  font-size: 3rem;
+}
+.star-rating .star:first-child span {
+  color: rgb(255, 191, 0);
+}
+h2 {
+  font-weight: 600;
+  font-size: 40px;
+}
+.center {
+  text-align: center;
+}
+.homeCategories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 20px auto 70px;
+}
+.homeCategories .cardWrapper {
+  width: 33.33%;
+}
+.homeCategories .card h3 {
+  font-size: 24px;
+}
+.recipe-in-category {
+  text-align: center;
+  font-size: 24px;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.recipe-in-category div {
+  margin: 1rem 0;
+}
+.small-font {
+  font-size: 18px;
+}

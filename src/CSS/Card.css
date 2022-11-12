@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+h2 {
+    font-size: 3.2rem;
+}
+
+
+
+section {
+    padding: 3rem 0;
+}
+
+.container{
+    width: calc(100vw - 4rem);
+    margin: 0 auto;
+}
+.card {
+    background-color: var(--terciaryColor);
+    box-shadow: var(--boxShadow);
+    color: var(--secondaryColor);
+    font-size: 1.6rem;    
+    padding: 1rem;                  
+}
+/* Star Rating*/
+.star-rating{
+    color: rgb(231, 231, 231);
+    font-size: 3rem;
+  }
+  .star-rating .star:first-child span {
+    color: rgb(255, 191, 0);
+  }

@@ -1,0 +1,32 @@
+footer {
+        background-color: #421D21;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+    }   
+    
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footerLinks a:hover {color: #BD996E;
+}
+
+.icons {
+    padding: 10px;
+    color: white;
+}
+
+.icons:hover {
+
+    color: #BD996E;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.5);
+}

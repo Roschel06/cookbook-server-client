@@ -1,0 +1,204 @@
+#communityRecommendations {
+    position: relative;
+    background: var(--primaryColor);
+    color: var(--terciaryColor);
+}
+#communityRecommendations h2 {
+    padding: 3.2rem;
+    text-align: left;
+}
+img.cockingImage {
+    display: none;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  margin-right: -10.4rem;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  height: 380px;
+  text-align: center;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 250%;
+  height: 380px;
+  scroll-snap-align: center;
+  margin-right: 0px;
+  box-sizing: border-box;
+  transform-origin: center center;
+  transform: scale(1);
+}
+
+.slide__text {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+ 
+.cardWrapper {
+    padding: 0 0.8rem;
+}
+.card {
+  transition: all 0.5s;
+}
+
+a:hover .card {
+  box-shadow: 0px 4px 40px rgb(40 33 26 / 40%);
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+.card h3 {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  line-height: 23px;
+  padding: 2rem 0 1rem;
+}
+/* --- scrollbar --- 
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #c3273b; 
+}
+::-webkit-scrollbar-thumb {
+  background: #8b0011; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #72000e; 
+}
+*/
+
+
+@media only screen and (min-width: 768px) {
+  #communityRecommendations {
+    background: linear-gradient(to left, #ffffff00 25%, var(--primaryColor) 25%);
+    padding-bottom: 13.2rem;
+  }
+  #communityRecommendations h2 {
+    width: 60%;
+    padding: 6.4rem 6.4rem 4.2rem 6.4rem;
+  }
+  img.cockingImage {
+    display: block;
+    position: absolute;
+    bottom: 3.2rem;
+    left: 3.2rem;
+    height: auto;
+}
+  .sliderArrows {
+    position: absolute;
+    left: calc(75% - 50px);
+    bottom: 3.4rem;
+}
+.sliderArrows img:last-child {
+    margin-left: 20px;
+}
+  .slide:after {
+    content: "";
+    width: 40px;
+    height: 460px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(255,252,243,0) 0%, rgba(255,252,243,0.5) 75%, rgba(255,252,243,1) 100%);
+  }
+  .card img {
+    height: 398px;
+  }
+  .slider-container {
+    margin-right: 0;
+  }
+  .slider {
+    height: 572px;
+    overflow: hidden;
+  }
+  .slide {
+    width: 100%;
+    height: 572px;
+  }
+  .slide .cardWrapper:nth-of-type(4n) {
+    margin-right: -18.4rem;
+  }
+  .slider::before {
+    background-image: url(../assets/arrows-left.svg);
+  }
+
+  .slider::after {
+    background-image: url(../assets/arrows-right.svg);
+  }
+  a.slide__next,
+  .slider::after {
+    margin-left: 60px;
+  }
+
+  .slider::before,
+  .slider::after,
+  .slide__prev,
+  .slide__next {
+  position: absolute;
+  width: 40px;
+  height: 34px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  }
+
+  .slider::before,
+  .slider::after {
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+  bottom: 0rem;
+  left: calc(75% - 50px);
+  }
+  .cardWrapper {
+    width: 25%;
+    padding: 1.6rem;
+  }
+  .slide .cardWrapper:nth-of-type(4n) {
+    margin-right: -10.4rem;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  #communityRecommendations {
+    background: linear-gradient(to left, #ffffff00 50%, var(--primaryColor) 50%);
+}
+.sliderArrows {
+  left: calc(50% - 50px);
+} 
+.slide {
+  width: 100%;
+  height: 572px;
+}
+  .slider::before,
+  .slider::after {
+  left: calc(50% - 50px);
+}
+}
