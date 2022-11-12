@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect, useCallback} from 'react'
 import { Route, Routes, Link } from "react-router-dom";
 import CategoryPage from '../pages/CategoryPage';
+import axios from "axios"
 
 export default function HomeCategories() {
 
@@ -10,15 +11,15 @@ export default function HomeCategories() {
 
    
     const getData = useCallback(async() => {
-/*         try {
-            const response = await client.getEntries({ content_type: 'category'})
-            const responseData = response.items
-            console.log(responseData)
+        try {
+            const response = await axios.get('/recipes/list')
+    
+            console.log(response)
 
-            setCategories([...responseData])
+            setCategories([...response.data.recipes])
         } catch (error) {
             console.log(error)
-        } */
+        }
     }, [])
     
     useEffect(()=>{
@@ -30,16 +31,12 @@ console.log(categories);
   return (
     <>
     <section aria-label="Categories">
-       <h2 className='center'>Browse through categories</h2>
+       <h2 className='center'>Browse through recipes</h2>
        <div className="homeCategories">
         {categories?.map((item, idx) => <div key={idx} className="cardWrapper">
-        <Link to={`/category/${item.fields.titel}`}>
+        <Link to={`/category/${item.title}`}>
             <div className="card">
-                <picture>
-                    <source srcSet={`https:${item.fields.image.fields.file.url}?w=500&h=500&fm=webp`} type="image/webp" />
-                    <img src={`https:${item.fields.image.fields.file.url}?w=500&h=500`} alt="" />
-                </picture>
-                <h3>{item.fields.titel}</h3> 
+                <h3>{item.title}</h3> 
             </div>
         </Link>
         </div>

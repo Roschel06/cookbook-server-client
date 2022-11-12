@@ -22,7 +22,7 @@ module.exports.list = async (req, res) => {
     
   try {
       
-      const recipes = await User.find()
+      const recipes = await Recipe.find()
       res.send({success: true, recipes})
       
   } catch (error) {
